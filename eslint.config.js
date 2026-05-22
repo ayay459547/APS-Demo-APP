@@ -1,10 +1,15 @@
-// https://docs.expo.dev/guides/using-eslint/
-import expoConfig from "eslint-config-expo/flat";
-import { defineConfig } from "eslint/config";
+/* eslint-env node */
+const { defineConfig } = require("eslint/config");
+const expoConfig = require("eslint-config-expo/flat");
 
-export default defineConfig([
+module.exports = defineConfig([
   expoConfig,
   {
     ignores: ["dist/*"],
+  },
+  {
+    rules: {
+      "react/display-name": "off",
+    },
   },
 ]);
