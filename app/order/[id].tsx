@@ -1,5 +1,5 @@
 import { initialOrders } from "@/constants/mockData";
-import { Stack, useLocalSearchParams, useRouter } from "expo-router";
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import {
   AlertTriangle,
   ArrowRightLeft,
@@ -18,7 +18,6 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function OrderDetailScreen() {
   const { id } = useLocalSearchParams();
-  const router = useRouter();
   const order = initialOrders.find((o) => o.id === id);
 
   if (!order) {
@@ -43,7 +42,7 @@ export default function OrderDetailScreen() {
     switch (status) {
       case "normal":
         colorClass = "bg-green-100 text-green-700";
-        label = "正常";
+        label = "進行中";
         break;
       case "delayed":
         colorClass = "bg-orange-100 text-orange-700";

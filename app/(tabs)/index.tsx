@@ -1,5 +1,5 @@
 import { initialOrders } from "@/constants/mockData";
-import { useRouter } from "expo-router";
+import { router } from "expo-router";
 import {
   AlertCircle,
   AlertTriangle,
@@ -22,7 +22,6 @@ import {
 export default function BoardScreen() {
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
 
   const filteredOrders = useMemo(() => {
     return initialOrders.filter((order) => {
@@ -42,7 +41,7 @@ export default function BoardScreen() {
     switch (status) {
       case "normal":
         colorClass = "bg-green-100 text-green-700";
-        label = "正常";
+        label = "進行中";
         Icon = CheckCircle2;
         break;
       case "delayed":
