@@ -19,8 +19,17 @@ import {
   View,
 } from "react-native";
 
+const TABS = [
+  { id: "all", label: "全部" },
+  { id: "normal", label: "進行中" },
+  { id: "delayed", label: "延遲" },
+  { id: "abnormal", label: "異常" },
+] as const;
+
 export default function BoardScreen() {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] =
+    useState<(typeof TABS)[number]["id"]>("all");
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredOrders = useMemo(() => {
@@ -87,22 +96,16 @@ export default function BoardScreen() {
         </View>
 
         <View className="flex-row bg-slate-200 p-1 rounded-xl">
-          {["all", "normal", "delayed", "abnormal"].map((tab) => (
+          {TABS.map((tab) => (
             <TouchableOpacity
-              key={tab}
-              onPress={() => setActiveTab(tab)}
-              className={`flex-1 py-2 rounded-lg items-center ${activeTab === tab ? "bg-white shadow-sm" : ""}`}
+              key={tab.id}
+              onPress={() => setActiveTab(tab.id)}
+              className={`flex-1 py-2 rounded-lg items-center ${activeTab === tab.id ? "bg-white shadow-sm" : ""}`}
             >
               <Text
-                className={`text-xs font-bold ${activeTab === tab ? "text-blue-600" : "text-slate-500"}`}
+                className={`text-xs font-bold ${activeTab === tab.id ? "text-blue-600" : "text-slate-500"}`}
               >
-                {tab === "all"
-                  ? "全部"
-                  : tab === "normal"
-                    ? "進行中"
-                    : tab === "delayed"
-                      ? "延遲"
-                      : "異常"}
+                {tab.label}
               </Text>
             </TouchableOpacity>
           ))}
