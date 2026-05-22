@@ -1,1 +1,14 @@
-{ "recommendations": ["expo.vscode-expo-tools"] }
+{
+  "recommendations": [
+    "expo.vscode-expo-tools",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "msjsdiag.vscode-js-debug",
+    "antfu.unocss",
+    "lokalise.i18n-ally",
+    "vitest.explorer",
+    "GitHub.vscode-pull-request-github"
+  ]
+}
