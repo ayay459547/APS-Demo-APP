@@ -1,17 +1,17 @@
 import { initialNotifications } from "@/constants/mockData";
 import {
-    AlertCircle,
-    AlertTriangle,
-    ArrowRightLeft,
-    CheckCircle2,
+  AlertCircle,
+  AlertTriangle,
+  ArrowRightLeft,
+  CheckCircle2,
 } from "lucide-react-native";
 import React, { useState } from "react";
 import {
-    ActivityIndicator,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function NotificationScreen() {

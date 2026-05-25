@@ -2,11 +2,11 @@ import { initialSchedules } from "@/constants/mockData";
 import { Calendar, Clock } from "lucide-react-native";
 import React, { useState } from "react";
 import {
-    ActivityIndicator,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View,
+  ActivityIndicator,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function ScheduleScreen() {
