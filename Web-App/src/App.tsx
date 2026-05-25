@@ -187,8 +187,7 @@ export default function App() {
 
   const filteredOrders = useMemo(() => {
     return initialOrders.filter(order => {
-      const matchStatus =
-        activeTab === 'all' ? true : order.status === activeTab
+      const matchStatus = activeTab === 'all' || order.status === activeTab
       const matchSearch =
         order.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
         order.product.toLowerCase().includes(searchQuery.toLowerCase())
@@ -283,7 +282,7 @@ export default function App() {
                 <Factory size={40} className='text-white' />
               </div>
               <h1 className='text-3xl font-bold text-slate-800 mb-2 tracking-wider'>
-                APS App Demo
+                APS 戰情室
               </h1>
               <p className='text-slate-500 text-sm'>行動智能製造管理系統</p>
             </div>
@@ -298,7 +297,7 @@ export default function App() {
                   prefix={
                     <UserCircle size={18} className='text-slate-400 mr-2' />
                   }
-                  defaultValue='EMP-1234'
+                  defaultValue='EMP-8859'
                   className='bg-slate-50 border-slate-200 text-slate-800 hover:bg-slate-100 focus:bg-white rounded-xl h-12 text-lg font-medium placeholder:text-slate-400'
                 />
               </div>
@@ -646,7 +645,7 @@ export default function App() {
                 </div>
                 <h2 className='text-2xl font-bold text-slate-800'>王大明</h2>
                 <p className='text-sm text-slate-500 mt-1 font-medium bg-slate-200 px-3 py-1 rounded-full'>
-                  EMP-1234 | PC 工程部
+                  EMP-8859 | PC 工程部
                 </p>
               </div>
 
@@ -1024,9 +1023,7 @@ export default function App() {
               <div className='w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center shadow-lg shadow-blue-600/40 mb-4'>
                 <Factory size={40} className='text-white' />
               </div>
-              <h2 className='text-2xl font-bold text-slate-800'>
-                APS App Demo
-              </h2>
+              <h2 className='text-2xl font-bold text-slate-800'>APS 戰情室</h2>
               <Tag
                 color='processing'
                 className='mt-2 px-3 py-1 text-sm rounded-full border-none font-bold'
