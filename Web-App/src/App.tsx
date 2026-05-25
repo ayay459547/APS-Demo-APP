@@ -56,6 +56,7 @@ import {
 } from './mockData'
 
 import PhoneWrapper from '@/components/PhoneWrapper.tsx'
+import './global.css'
 
 const { TextArea } = Input
 const { Text } = Typography
