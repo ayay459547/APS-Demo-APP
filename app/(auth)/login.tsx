@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 import { Factory, Lock, UserCircle } from "lucide-react-native";
 import React, { useState } from "react";
 import {
@@ -13,6 +13,7 @@ import {
 
 export default function LoginScreen() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const router = useRouter();
 
   const handleLogin = () => {
     setIsLoggingIn(true);

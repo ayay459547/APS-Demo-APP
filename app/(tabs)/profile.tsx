@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 import {
   ChevronRight,
   LogOut,
@@ -10,9 +10,11 @@ import React from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function ProfileScreen() {
+  const router = useRouter();
+
   const handleLogout = () => {
     // In a real app, clear tokens etc.
-    router.replace("/(auth)/login");
+    router.replace("/login");
   };
 
   return (
