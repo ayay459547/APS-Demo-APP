@@ -1,21 +1,10 @@
-<<<<<<< HEAD
-/* eslint-env node */
-const { defineConfig } = require("eslint/config");
-const expoConfig = require("eslint-config-expo/flat");
-=======
 // https://docs.expo.dev/guides/using-eslint/
-const { defineConfig } = require('eslint/config');
-const expoConfig = require('eslint-config-expo/flat');
->>>>>>> parent of acba134 (feat: app v1)
+import expoConfig from "eslint-config-expo/flat";
+import { defineConfig } from "eslint/config";
 
-module.exports = defineConfig([
+export default defineConfig([
   expoConfig,
   {
-    ignores: ['dist/*'],
-  },
-  {
-    rules: {
-      "react/display-name": "off",
-    },
+    ignores: ["dist/*"],
   },
 ]);
