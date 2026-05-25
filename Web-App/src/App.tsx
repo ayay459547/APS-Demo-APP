@@ -187,7 +187,8 @@ export default function App() {
 
   const filteredOrders = useMemo(() => {
     return initialOrders.filter(order => {
-      const matchStatus = activeTab === 'all' || order.status === activeTab
+      const matchStatus =
+        activeTab === 'all' ? true : order.status === activeTab
       const matchSearch =
         order.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
         order.product.toLowerCase().includes(searchQuery.toLowerCase())
